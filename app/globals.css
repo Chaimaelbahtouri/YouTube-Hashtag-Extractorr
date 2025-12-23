@@ -1,0 +1,301 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: #181818;
+  padding: 20px 30px;
+  border-bottom: 1px solid #2a2a2a;
+  text-align: center;
+}
+
+.navbar h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+}
+
+.navbar i {
+  color: #ff0000;
+}
+
+.navbar-title {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+}
+
+.navbar-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+/* ===== Main Container ===== */
+.main-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== Subtitle Above Input ===== */
+.main-subtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== Input Section ===== */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.input-section button {
+  padding: 14px 25px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+/* Disabled state */
+.disabled-button {
+  background: #555;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Active state */
+.active-button {
+  background: #ff0000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.active-button:hover {
+  background: #e60000;
+}
+
+/* ===== Video Info ===== */
+.video-info {
+  background: #181818;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.video-info h2 {
+  margin-bottom: 15px;
+}
+
+.hashtags span {
+  display: inline-flex;
+  align-items: center;
+  background: #333;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hashtags span:hover {
+  background: #444;
+}
+
+.copy-all {
+  margin-top: 15px;
+  background: #ff0000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.copy-all:hover {
+  background: #e60000;
+}
+
+/* ===== Share Section ===== */
+.share-section-container {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  border: 1px solid #555;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Main share button */
+.share-main-button {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.share-main-button:hover {
+  background: #155db2;
+  transform: translateY(-2px);
+}
+
+/* Subtitle */
+.share-subtitle {
+  font-size: 1rem;
+  color: #aaa;
+  margin: 0;
+}
+
+/* Divider with "Or share on" */
+.share-or {
+  display: flex;
+  align-items: center;
+  color: #aaa;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.share-or::before,
+.share-or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #555;
+  margin: 0 15px;
+}
+
+/* Social buttons */
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.share-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.share-buttons a:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* Individual social button colors */
+.share-buttons .facebook {
+  background-color: #1877f2;
+}
+
+.share-buttons .twitter {
+  background-color: #1da1f2;
+}
+
+.share-buttons .linkedin {
+  background-color: #0077b5;
+}
+
+.share-buttons .whatsapp {
+  background-color: #25d366;
+}
+.share-bottom-message {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-top: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+
+/* ===== Footer ===== */
+.footer {
+  background: #181818;
+  margin-top: 60px;
+}
+
+.footer-info {
+  font-size: 0.85rem; /* smaller than current text */
+  color: rgba(170, 170, 170, 0.5); /* semi-transparent gray */
+
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-info hr {
+  border: none;
+  border-top: 1px solid #2a2a2a;
+  margin: 15px 0;
+}
+
+.footer-bottom {
+  background: #0f0f0f;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .input-section {
+    flex-direction: column;
+  }
+
+  .share-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .share-buttons a {
+    width: 100%;
+    justify-content: center;
+  }
+}
