@@ -8,7 +8,7 @@ const ShareSection = ({ videoLink }) => {
 
   // Copy website link
   const copyWebsite = () => {
-    navigator.clipboard.writeText("https://yourwebsite.com"); // Replace with your website
+    navigator.clipboard.writeText("https://you-tube-hashtag-extractorr-jvzr.vercel.app/"); // Replace with your website
     alert("Website link copied!");
   };
 
