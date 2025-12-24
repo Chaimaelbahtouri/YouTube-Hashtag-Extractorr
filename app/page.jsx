@@ -52,7 +52,7 @@ export default function Page() {
         <VideoInfo title={videoData.title} hashtags={videoData.hashtags} />
       )}
       <ShareSection videoLink={videoLink} />
-      <GoogleAd adSlot="1234567890" />
+      <GoogleAd adSlot="6501995365" />
       <Footer />
     </div>
   );
