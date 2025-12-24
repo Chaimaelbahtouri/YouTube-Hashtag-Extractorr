@@ -16,7 +16,7 @@ export default function GoogleAd({ adSlot }) {
       className="adsbygoogle"
       style={{ display: "block" }}
       data-ad-client="ca-pub-8286057084197279" // هادشي خاصو يكون هو Client ID ديالك
-      data-ad-slot={6501995365} // هادشي هو Ad Unit ID
+      data-ad-slot={adSlot} // هادشي هو Ad Unit ID
       data-ad-format="auto"
       data-full-width-responsive="true"
     ></ins>
