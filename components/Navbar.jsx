@@ -1,18 +1,15 @@
+"use client";
 import React from "react";
-import { FaYoutube, FaHashtag } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
-      {/* Icons line */}
-      <div className="navbar-icons">
-        <FaYoutube style={{ color: "#FF0000" }} />
-        <FaHashtag style={{ color: "#ffcc00" }} />
-      </div>
-
-      {/* Title line */}
-      <h1 className="navbar-title">YouTube Hashtag Extractor</h1>
-    </div>
+    <nav className="navbar">
+      <h1>
+        <FaYoutube style={{ color: "#ff0000", marginRight: "8px" }} />
+        YouTube Hashtag Extractor
+      </h1>
+    </nav>
   );
 };
 

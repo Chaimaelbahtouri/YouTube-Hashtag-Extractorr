@@ -32,20 +32,6 @@ body {
   color: #ff0000;
 }
 
-.navbar-title {
-  font-size: 1.8rem;
-  color: #fff;
-  margin: 0;
-}
-
-.navbar-icons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-}
-
 /* ===== Main Container ===== */
 .main-container {
   max-width: 900px;
@@ -143,6 +129,25 @@ body {
   background: #e60000;
 }
 
+/* ===== Content Section ===== */
+.content-section {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #181818;
+  border-radius: 8px;
+  color: #ddd;
+}
+
+.content-section h2 {
+  margin-bottom: 12px;
+}
+
+.content-section p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
 /* ===== Share Section ===== */
 .share-section-container {
   text-align: center;
@@ -158,7 +163,6 @@ body {
   gap: 20px;
 }
 
-/* Main share button */
 .share-main-button {
   background: #1877f2;
   color: #fff;
@@ -177,14 +181,12 @@ body {
   transform: translateY(-2px);
 }
 
-/* Subtitle */
 .share-subtitle {
   font-size: 1rem;
   color: #aaa;
   margin: 0;
 }
 
-/* Divider with "Or share on" */
 .share-or {
   display: flex;
   align-items: center;
@@ -202,7 +204,6 @@ body {
   margin: 0 15px;
 }
 
-/* Social buttons */
 .share-buttons {
   display: flex;
   justify-content: center;
@@ -228,7 +229,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Individual social button colors */
 .share-buttons .facebook {
   background-color: #1877f2;
 }
@@ -244,6 +244,7 @@ body {
 .share-buttons .whatsapp {
   background-color: #25d366;
 }
+
 .share-bottom-message {
   font-size: 0.95rem;
   color: #aaa;
@@ -252,7 +253,6 @@ body {
   text-align: center;
 }
 
-
 /* ===== Footer ===== */
 .footer {
   background: #181818;
@@ -260,9 +260,8 @@ body {
 }
 
 .footer-info {
-  font-size: 0.85rem; /* smaller than current text */
-  color: rgba(170, 170, 170, 0.5); /* semi-transparent gray */
-
+  font-size: 0.85rem;
+  color: rgba(170, 170, 170, 0.5);
   max-width: 900px;
   margin: auto;
   padding: 30px 20px;
