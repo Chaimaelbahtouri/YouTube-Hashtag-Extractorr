@@ -1,37 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaShareAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 const ShareSection = ({ videoLink }) => {
+  const [copied, setCopied] = useState(false);
+
   const shareText = encodeURIComponent(
-    `Check this video and extract hashtags: ${videoLink}`
+    `Check this video and extract hashtags: ${videoLink || "https://you-tube-hashtag-extractorr-jvzr.vercel.app/"}`
   );
 
-  // Copy website link
   const copyWebsite = () => {
-    navigator.clipboard.writeText("https://you-tube-hashtag-extractorr-jvzr.vercel.app/"); // Replace with your website
-    alert("Website link copied!");
+    const linkToCopy = videoLink || "https://you-tube-hashtag-extractorr-jvzr.vercel.app/";
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(linkToCopy)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1500); // يرجع للزر الأصلي بعد 1.5 ثانية
+        })
+        .catch(() => setCopied(false));
+    } else {
+      const textArea = document.createElement("textarea");
+      textArea.value = linkToCopy;
+      textArea.style.position = "fixed";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+      } catch {
+        setCopied(false);
+      }
+      document.body.removeChild(textArea);
+    }
   };
 
   return (
     <div className="share-section-container">
-      {/* Main share button */}
-      <button className="share-main-button" onClick={copyWebsite}>
+      <button
+        className="share-main-button"
+        onClick={copyWebsite}
+        style={{ background: copied ? "#ff4d4d" : "#1877f2" }}
+      >
         <FaShareAlt style={{ marginRight: "8px" }} />
-        Share Website
+        {copied ? "Copied!" : "Share Website"}
       </button>
 
-      {/* Subtitle */}
       <p className="share-subtitle">
         Help others discover this YouTube hashtag extractor
       </p>
 
-      {/* OR separator */}
       <p className="share-or">Or share on</p>
 
-      {/* Social buttons */}
       <div className="share-buttons">
         <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${videoLink}`}
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(videoLink || "https://you-tube-hashtag-extractorr-jvzr.vercel.app/")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="facebook"
@@ -47,7 +71,7 @@ const ShareSection = ({ videoLink }) => {
           <FaTwitter /> Twitter
         </a>
         <a
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${videoLink}`}
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(videoLink || "https://you-tube-hashtag-extractorr-jvzr.vercel.app/")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="linkedin"
@@ -64,7 +88,6 @@ const ShareSection = ({ videoLink }) => {
         </a>
       </div>
 
-      {/* Bottom message */}
       <p className="share-bottom-message">
         Share with friends and help them <br />
         extract hashtags easily!

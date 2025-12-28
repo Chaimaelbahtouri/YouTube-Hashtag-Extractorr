@@ -1,20 +1,18 @@
 import React from "react";
 
 const InputSection = ({ videoLink, setVideoLink, onGetHashtags }) => {
-  const isDisabled = !videoLink.trim();
-
   return (
     <div className="input-section">
       <input
         type="text"
-        placeholder="Enter full YouTube URL"
+        placeholder="Enter YouTube video link"
         value={videoLink}
         onChange={(e) => setVideoLink(e.target.value)}
       />
       <button
+        className={videoLink ? "active-button" : "disabled-button"}
         onClick={onGetHashtags}
-        disabled={isDisabled}
-        className={isDisabled ? "disabled-button" : "active-button"}
+        disabled={!videoLink}
       >
         Get Hashtags
       </button>

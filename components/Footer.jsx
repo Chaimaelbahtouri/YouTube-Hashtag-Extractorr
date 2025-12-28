@@ -1,20 +1,17 @@
-"use client";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-info">
-        <p>
-          &copy; {new Date().getFullYear()} YouTube Hashtag Extractor. All rights
-          reserved.
-        </p>
-        <p>
-          <a href="/privacy-policy">Privacy Policy</a>
-        </p>
         <hr />
+        <p>
+          &copy; {new Date().getFullYear()} YouTube Hashtag Extractor. All rights reserved.
+        </p>
       </div>
-      <div className="footer-bottom">Made by cel</div>
+      <div className="footer-bottom">
+        Developed by Chaimaelbahtouri
+      </div>
     </footer>
   );
 };

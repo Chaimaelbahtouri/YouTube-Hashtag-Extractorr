@@ -1,24 +1,24 @@
 "use client";
 import React, { useEffect } from "react";
 
-const GoogleAd = ({ adSlot }) => {
+const GoogleAd = ({ adSlot, style }) => {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {}
+    } catch (e) {
+      console.error(e);
+    }
   }, []);
 
   return (
-    <div style={{ textAlign: "center", margin: "20px 0" }}>
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-8286057084197279"
-        data-ad-slot={adSlot}
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </div>
+    <ins
+      className="adsbygoogle"
+      style={{ display: "block", textAlign: "center", ...style }}
+      data-ad-client="ca-pub-8286057084197279"
+      data-ad-slot={adSlot}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
   );
 };
 

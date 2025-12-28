@@ -6,7 +6,14 @@ import VideoInfo from "../components/VideoInfo";
 import ShareSection from "../components/ShareSection";
 import Footer from "../components/Footer";
 import GoogleAd from "../components/GoogleAd";
-import ContentSection from "../components/ContentSection";
+import InfoSection from "../components/InfoSection";
+import SeoSection from "../components/SeoSection";
+import Contact from "../components/Contact";
+import About from "../components/About";
+import PrivacyPolicy from "../components/PrivacyPolicy";
+import Testimonials from "../components/Testimonials";
+import FaqSection from "../components/FaqSection";
+import FeaturesSection from "../components/FeaturesSection";
 
 export default function Page() {
   const [videoLink, setVideoLink] = useState("");
@@ -21,7 +28,6 @@ export default function Page() {
 
   const handleGetHashtags = async () => {
     const videoId = extractVideoId(videoLink);
-
     if (!videoId) {
       alert("Invalid YouTube link");
       return;
@@ -42,21 +48,21 @@ export default function Page() {
   };
 
   const handleCopyAll = () => {
-    const allTags = videoData.hashtags.join(" ");
-    navigator.clipboard.writeText(allTags);
-    alert("All hashtags copied!");
+    if (videoData.hashtags.length === 0) return;
+    navigator.clipboard.writeText(videoData.hashtags.join(" "));
+    alert("Copied all hashtags");
   };
 
   return (
     <div>
       <Navbar />
+      
       <InputSection
         videoLink={videoLink}
         setVideoLink={setVideoLink}
         onGetHashtags={handleGetHashtags}
       />
-      <ContentSection />
-      <GoogleAd adSlot="6501995365" />
+
       {videoData.title && (
         <VideoInfo
           title={videoData.title}
@@ -64,7 +70,29 @@ export default function Page() {
           onCopyAll={handleCopyAll}
         />
       )}
+
+    
       <ShareSection videoLink={videoLink} />
+      <GoogleAd adSlot="6501995365" />
+
+
+      <FeaturesSection />
+
+      {/* إعلان بين Features و FAQ */}
+      <GoogleAd adSlot="0987654321" />
+
+      <FaqSection />
+      <Testimonials />
+
+      <InfoSection />
+      <SeoSection />
+
+
+      <Contact />
+      <About />
+      <PrivacyPolicy />
+      <GoogleAd adSlot="1122334455" />
+
       <Footer />
     </div>
   );
