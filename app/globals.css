@@ -477,43 +477,30 @@ body {
 .logo-highlight {
   color: #FF0000;
 }
+/* Navbar Container */
 .navbar {
   background: #1e1e1e;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  gap: 20px;
+  flex-wrap: nowrap; /* منع التفكيك تحت بعض */
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.logo-icon {
-  color: #ff0000;
-  font-size: 2rem;
-}
-
+/* Links */
 .navbar-links {
   display: flex;
   gap: 25px;
   list-style: none;
+  flex-wrap: nowrap; /* منع التفكيك */
 }
 
 .navbar-links li {
   color: #fff;
   font-weight: 500;
   cursor: pointer;
+  white-space: nowrap; /* تمنع كسر النص */
   transition: color 0.3s ease;
 }
 
@@ -521,17 +508,17 @@ body {
   color: #ff0000;
 }
 
-/* Responsive */
+/* Responsive: تخليهم يبقوا في صف واحد ويصغروا شوي */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row; /* دائما صف واحد */
+    justify-content: space-around; /* توزع بشكل متساوي */
   }
   .navbar-links {
-    flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* يقلل المسافة شوي */
   }
 }
+
 
 /* ===== Intro Section ===== */
 .intro-section {
