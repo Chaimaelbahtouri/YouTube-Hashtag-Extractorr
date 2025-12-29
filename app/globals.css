@@ -477,3 +477,248 @@ body {
 .logo-highlight {
   color: #FF0000;
 }
+.navbar {
+  background: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logo-icon {
+  color: #ff0000;
+  font-size: 2rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar-links li {
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li:hover {
+  color: #ff0000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ===== Intro Section ===== */
+.intro-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+.intro-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff0000; /* يبرز العنوان */
+}
+
+.intro-section p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.intro-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.intro-buttons button {
+  padding: 14px 30px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.intro-buttons .primary-btn {
+  background: #ff0000;
+  color: #fff;
+}
+
+.intro-buttons .primary-btn:hover {
+  background: #e60000;
+  transform: translateY(-2px);
+}
+
+.intro-buttons .secondary-btn {
+  background: #333;
+  color: #fff;
+}
+
+.intro-buttons .secondary-btn:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .intro-section h1 {
+    font-size: 2rem;
+  }
+  .intro-section p {
+    font-size: 1rem;
+  }
+  .intro-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* ===== Contact Section ===== */
+.contact-section {
+  width: 95%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 35px 25px;
+  border-radius: 15px;
+  background: #1f1f1f;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-left: 6px solid #ff0000;
+  padding-left: 12px;
+  color: #fff;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* رابط البريد يبقى أبيض */
+.contact-section a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #ff0000;
+}
+
+/* إذا بغيت تضيف form لاحقاً */
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #2c2c2c;
+  color: #fff;
+  resize: none;
+}
+
+.contact-section button {
+  background: #ff0000;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-section button:hover {
+  background: #e60000;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 25px 20px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+}
+.terms-section {
+  width: 95%;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  border-radius: 15px;
+  background: #1f1f1f;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+.terms-section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  border-left: 6px solid #ff0000;
+  padding-left: 12px;
+}
+
+.terms-section p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 15px;
+}

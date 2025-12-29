@@ -1,19 +1,20 @@
 "use client";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import IntroSection from "../components/IntroSection";
 import InputSection from "../components/InputSection";
 import VideoInfo from "../components/VideoInfo";
 import ShareSection from "../components/ShareSection";
-import Footer from "../components/Footer";
-import GoogleAd from "../components/GoogleAd";
+import FeaturesSection from "../components/FeaturesSection";
+import FaqSection from "../components/FaqSection";
+import Testimonials from "../components/Testimonials";
 import InfoSection from "../components/InfoSection";
 import SeoSection from "../components/SeoSection";
 import Contact from "../components/Contact";
 import About from "../components/About";
 import PrivacyPolicy from "../components/PrivacyPolicy";
-import Testimonials from "../components/Testimonials";
-import FaqSection from "../components/FaqSection";
-import FeaturesSection from "../components/FeaturesSection";
+import Footer from "../components/Footer";
+import Terms from "../components/Terms"; 
 
 export default function Page() {
   const [videoLink, setVideoLink] = useState("");
@@ -50,49 +51,67 @@ export default function Page() {
   const handleCopyAll = () => {
     if (videoData.hashtags.length === 0) return;
     navigator.clipboard.writeText(videoData.hashtags.join(" "));
-    alert("Copied all hashtags");
   };
 
   return (
     <div>
       <Navbar />
-      
-      <InputSection
-        videoLink={videoLink}
-        setVideoLink={setVideoLink}
-        onGetHashtags={handleGetHashtags}
-      />
+
+      <section id="intro">
+        <IntroSection />
+      </section>
+
+      <section id="input">
+        <InputSection
+          videoLink={videoLink}
+          setVideoLink={setVideoLink}
+          onGetHashtags={handleGetHashtags}
+        />
+      </section>
 
       {videoData.title && (
-        <VideoInfo
-          title={videoData.title}
-          hashtags={videoData.hashtags}
-          onCopyAll={handleCopyAll}
-        />
+        <section id="video-info">
+          <VideoInfo
+            title={videoData.title}
+            hashtags={videoData.hashtags}
+            onCopyAll={handleCopyAll}
+          />
+        </section>
       )}
 
-    
-      <ShareSection videoLink={videoLink} />
-      <GoogleAd adSlot="6501995365" />
+      <section id="share">
+        <ShareSection videoLink={videoLink} />
+      </section>
 
+      <section id="features">
+        <FeaturesSection />
+      </section>
 
-      <FeaturesSection />
+      <section id="faq">
+        <FaqSection />
+      </section>
 
-      {/* إعلان بين Features و FAQ */}
-      <GoogleAd adSlot="0987654321" />
+      
+      <section id="info">
+        <InfoSection />
+      </section>
 
-      <FaqSection />
-      <Testimonials />
+      <section id="seo">
+        <SeoSection />
+      </section>
 
-      <InfoSection />
-      <SeoSection />
+      <section id="about">
+        <About />
+      </section>
 
-
-      <Contact />
-      <About />
-      <PrivacyPolicy />
-      <GoogleAd adSlot="1122334455" />
-
+      <section id="privacy">
+        <PrivacyPolicy />
+      </section>
+      <Terms />
+      
+      <section id="contact">
+        <Contact />
+      </section>
       <Footer />
     </div>
   );

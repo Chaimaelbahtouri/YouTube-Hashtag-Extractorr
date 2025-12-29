@@ -3,10 +3,10 @@ import React from "react";
 const About = () => {
   return (
     <section className="about-section">
-      <h2>About</h2>
+      <h2>About TubeTags</h2>
       <p>
-        YouTube Hashtag Extractor helps content creators find the most relevant
-        hashtags to boost their videos' visibility.
+        TubeTags is a tool designed specifically for YouTube content creators to find the most relevant hashtags 
+        for their videos, helping to increase visibility and engagement on the platform.
       </p>
     </section>
   );

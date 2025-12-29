@@ -1,9 +1,8 @@
-// FaqSection.jsx
 import React, { useState } from "react";
 
 const faqData = [
   {
-    question: "How do I extract hashtags from a video?",
+    question: "How do I extract hashtags from a YouTube video?",
     answer: "Simply paste the YouTube video link and click 'Get Hashtags'.",
   },
   {
