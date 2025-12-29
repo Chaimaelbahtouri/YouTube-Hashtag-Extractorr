@@ -11,13 +11,12 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h1>
-        <FaYoutube className="youtube-icon" />
+      <h1 className="logo">
+        <FaYoutube className="logo-icon" />
         TubeTags
       </h1>
-      <ul className="navbar-links">
-        <li onClick={() => scrollToSection("intro")}>Intro</li>
-        <li onClick={() => scrollToSection("input")}>Extractor</li>
+
+      <ul className="nav-links">
         <li onClick={() => scrollToSection("features")}>Features</li>
         <li onClick={() => scrollToSection("faq")}>FAQ</li>
         <li onClick={() => scrollToSection("contact")}>Contact</li>
