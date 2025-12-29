@@ -16,50 +16,67 @@ body {
 /* ===== Navbar ===== */
 .navbar {
   background: #1e1e1e;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  gap: 20px;
-  flex-wrap: nowrap;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  width: 100%; /* مهم باش ما يخرجش على الشاشة */
+  max-width: 100%;
+  overflow: hidden;
 }
 
-.logo {
+.navbar h1 {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 1.6rem;
   color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
-  cursor: pointer;
+  white-space: nowrap; /* باش ما يتكسرش النص */
 }
 
-.logo-icon {
+.navbar i {
   color: #ff0000;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .navbar-links {
   display: flex;
-  gap: 25px;
-  list-style: none;
-  flex-wrap: nowrap;
+  gap: 15px;
+  flex-wrap: wrap; /* باش يستوعب الصغر */
 }
 
 .navbar-links li {
-  color: #fff;
-  font-weight: 500;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: color 0.3s ease;
+  list-style: none;
 }
 
-.navbar-links li:hover {
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+}
+
+.navbar-links a:hover {
   color: #ff0000;
+}
+
+/* ===== Mobile Fix ===== */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .navbar h1 {
+    font-size: 1.4rem;
+  }
+
+  .navbar-links {
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
 /* ===== Main Container ===== */
